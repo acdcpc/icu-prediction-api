@@ -3,9 +3,11 @@ import pickle
 import pandas as pd
 import numpy as np
 from flask import Flask, request, jsonify
+from flask_cors import CORS  # 🔥 Add this line
 from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
+CORS(app)  # 🔥 Allow all origins (Fixes CORS issues)
 
 # Ensure model and scaler files exist
 model_path = "ml_model.pkl"
